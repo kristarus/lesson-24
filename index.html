@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Lesson 24</title>
+  </head>
+  <body>
+    <div id="mainDesk">
+      <!-- submit -->
+      <form id="inputEx">
+        <p class="textHeader">To Do</p>
+        <input type="text" placeholder="Name" id="inputName" />
+        <input type="text" placeholder="Description" id="inputDescription" />
+        <button id="btnSubmit">Submit</button>
+      </form>
+
+      <!-- in progress -->
+      <div id="deskProgress">
+        <p>In progress</p>
+        <div id="deskProgress_tasks"></div>
+      </div>
+
+      <!-- done -->
+      <div id="deskDone">
+        <p>Done</p>
+        <div id="deskDone_tasks"></div>
+      </div>
+
+      <!-- deleted -->
+      <div id="deskDeleted">
+        <p>Deleted</p>
+        <div id="deskDeleted_tasks"></div>
+      </div>
+    </div>
+
+    <!-- modal -->
+
+    <div id="editModal">
+      <div id="editModal_window">
+        <input
+          type="text"
+          placeholder="Name:"
+          id="nameEdit"
+          class="task_margin"
+        />
+        <input
+          type="text"
+          placeholder="Description:"
+          id="descriptionEdit"
+          class="task_margin"
+        />
+        <div>
+          <button id="btnConfirm" class="task_margin">Confirm</button>
+          <button id="btnClose" class="task_margin">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

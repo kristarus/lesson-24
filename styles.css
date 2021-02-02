@@ -1,0 +1,126 @@
+#mainDesk {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#inputEx {
+  background-color: rgb(216, 197, 253);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#deskProgress {
+  background-color: rgb(216, 197, 253);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#deskDone {
+  background-color: rgb(216, 197, 253);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#deskDeleted {
+  background-color: rgb(216, 197, 253);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnDelete {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-image: url(./images/delete.png);
+  background-size: cover;
+}
+
+.btnDone {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-image: url(./images/done.png);
+  background-size: cover;
+}
+
+.btnEdit {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-image: url(./images/edit.png);
+  background-size: cover;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.task_margin {
+  margin: 10px 0;
+}
+
+#deskProgress_tasks {
+  width: 90%;
+}
+
+#deskDone_tasks {
+  width: 90%;
+}
+
+#deskDeleted_tasks {
+  width: 90%;
+}
+
+.task_btns {
+  align-self: center;
+}
+
+/* modal */
+
+#editModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: rgba(212, 0, 255, 0.5);
+  display: none;
+}
+
+#editModal_window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  margin-right: -50%;
+  padding: 1rem;
+  transform: translate(-50%, -50%);
+  background-color: rgb(243, 205, 255);
+
+  border: 2px solid purple;
+}
+
+#nameEdit {
+  border: 2px solid purple;
+  width: 70%;
+}
+
+#descriptionEdit {
+  border: 2px solid purple;
+  width: 70%;
+}
