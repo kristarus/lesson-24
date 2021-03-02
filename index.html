@@ -7,53 +7,66 @@
     <title>Lesson 24</title>
   </head>
   <body>
-    <div id="mainDesk">
+    <div id="headerBlock">
+      <h1>Your To Do List</h1>
+    </div>
+    <div id="mainDesk" class="mainDesk_style">
       <!-- submit -->
-      <form id="inputEx">
-        <p class="textHeader">To Do</p>
-        <input type="text" placeholder="Name" id="inputName" />
-        <input type="text" placeholder="Description" id="inputDescription" />
-        <button id="btnSubmit">Submit</button>
+      <form id="toDoForm" class="toDoForm_style">
+        <h3 id="toDoForm__header" class="toDoForm__header_margin">To Do</h3>
+        <div class="line"></div>
+        <input
+          type="text"
+          placeholder="Name"
+          autocomplete="off"
+          id="inputName"
+          class="inputName_margin"
+        />
+        <input
+          type="text"
+          placeholder="Description"
+          autocomplete="off"
+          id="inputDescription"
+          class="inputDescription_margin"
+        />
+        <button id="btnSubmit" class="btnSubmit_margin">Add</button>
       </form>
 
       <!-- in progress -->
-      <div id="deskProgress">
-        <p>In progress</p>
-        <div id="deskProgress_tasks"></div>
+      <div id="deskProgress" class="deskProgress_style">
+        <h3 class="deskProgress__header_margin">In progress</h3>
+        <div class="line"></div>
+        <div id="deskProgress__tasks"></div>
       </div>
 
       <!-- done -->
-      <div id="deskDone">
-        <p>Done</p>
-        <div id="deskDone_tasks"></div>
+      <div id="deskDone" class="deskDone_style">
+        <h3 class="deskDeleted__header_margin">Done</h3>
+        <div class="line"></div>
+        <div id="deskDone__tasks"></div>
       </div>
 
       <!-- deleted -->
-      <div id="deskDeleted">
-        <p>Deleted</p>
-        <div id="deskDeleted_tasks"></div>
+      <div id="deskDeleted" class="deskDeleted_style">
+        <h3 class="deskDeleted__header_margin">Deleted</h3>
+        <div class="line"></div>
+        <div id="deskDeleted__tasks"></div>
       </div>
     </div>
-
     <!-- modal -->
 
     <div id="editModal">
-      <div id="editModal_window">
-        <input
-          type="text"
-          placeholder="Name:"
-          id="nameEdit"
-          class="task_margin"
-        />
+      <div id="editModal__window">
+        <input type="text" placeholder="Name:" id="nameEdit" class="" />
         <input
           type="text"
           placeholder="Description:"
           id="descriptionEdit"
-          class="task_margin"
+          class="descriptionEdit_margin"
         />
         <div>
-          <button id="btnConfirm" class="task_margin">Confirm</button>
-          <button id="btnClose" class="task_margin">Close</button>
+          <button id="btnConfirm" class="">Confirm</button>
+          <button id="btnClose" class="">Cancel</button>
         </div>
       </div>
     </div>

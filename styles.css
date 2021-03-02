@@ -1,89 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+
+* {
+  font-family: "Gloria Hallelujah", cursive;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(93, 31, 112);
+}
+
+#headerBlock {
+  width: fit-content;
+  margin: 50px auto;
+  padding: 20px;
+  color: rgb(68, 22, 82);
+  background-color: rgb(241, 194, 255);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
 #mainDesk {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background-color: rgb(241, 194, 255);
+  width: 90%;
+  margin: 0 auto 20px;
 }
 
-#inputEx {
-  background-color: rgb(216, 197, 253);
+.mainDesk_style {
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.line {
+  height: 2px;
+  background-color: rgb(241, 194, 255);
+  width: 100%;
+}
+
+#toDoForm {
   width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: fit-content;
+}
+
+#toDoForm__header {
+  color: rgb(241, 194, 255);
+}
+
+#inputName {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgb(241, 194, 255);
+  background-color: rgb(68, 22, 82);
+  color: rgb(241, 194, 255);
+}
+
+#inputName::placeholder {
+  color: rgba(241, 194, 255, 0.3);
+}
+
+#inputDescription {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgb(241, 194, 255);
+  background-color: rgb(68, 22, 82);
+  color: rgb(241, 194, 255);
+}
+
+#inputDescription::placeholder {
+  color: rgba(241, 194, 255, 0.3);
+}
+
+.toDoForm_style {
+  background-color: rgb(68, 22, 82);
+  border-radius: 20px 20px 0 0;
+}
+
+.toDoForm__header_margin {
+  margin: 20px 0;
+}
+
+#btnSubmit {
+  background-color: rgb(241, 194, 255);
+  border: none;
+  outline: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+}
+
+#btnSubmit:hover {
+  background-color: rgba(241, 194, 255, 0.5);
+  transition: 0.2s;
+}
+
+.btnSubmit_margin {
+  margin-bottom: 20px;
+}
+
+.inputName_margin {
+  margin: 20px 0 0;
+}
+
+.inputDescription_margin {
+  margin: 10px 0 20px;
 }
 
 #deskProgress {
-  background-color: rgb(216, 197, 253);
   width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: fit-content;
+}
+
+.deskProgress_style {
+  background-color: rgb(68, 22, 82);
+  border-radius: 20px 20px 0 0;
+}
+
+.deskProgress__header_margin {
+  margin: 20px 0;
+  color: rgb(241, 194, 255);
 }
 
 #deskDone {
-  background-color: rgb(216, 197, 253);
   width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: fit-content;
+}
+
+.deskDone_style {
+  background-color: rgb(68, 22, 82);
+  border-radius: 20px 20px 0 0;
+}
+
+.deskDone__header_margin {
+  margin: 20px 0;
+  color: rgb(241, 194, 255);
 }
 
 #deskDeleted {
-  background-color: rgb(216, 197, 253);
   width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: fit-content;
+}
+
+.deskDeleted_style {
+  background-color: rgb(68, 22, 82);
+  border-radius: 20px 20px 0 0;
+}
+
+.deskDeleted__header_margin {
+  margin: 20px 0;
+  color: rgb(241, 194, 255);
 }
 
 .btnDelete {
   width: 30px;
   height: 30px;
   border: none;
+  outline: none;
+  border-radius: 7px;
   background-image: url(./images/delete.png);
-  background-size: cover;
+  background-color: rgb(68, 22, 82);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.btnDelete:hover {
+  background-color: rgba(68, 22, 82, 0.5);
+  transition: 0.2s;
 }
 
 .btnDone {
   width: 30px;
   height: 30px;
   border: none;
+  outline: none;
+  border-radius: 7px;
   background-image: url(./images/done.png);
+  background-color: rgb(68, 22, 82);
   background-size: cover;
+}
+
+.btnDone:hover {
+  background-color: rgba(68, 22, 82, 0.5);
+  transition: 0.2s;
 }
 
 .btnEdit {
   width: 30px;
   height: 30px;
   border: none;
+  outline: none;
+  border-radius: 7px;
   background-image: url(./images/edit.png);
-  background-size: cover;
+  background-color: rgb(68, 22, 82);
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.btnEdit:hover {
+  background-color: rgba(68, 22, 82, 0.5);
+  transition: 0.2s;
 }
 
 .task {
   display: flex;
   flex-direction: column;
   background-color: white;
+  border-radius: 10px;
 }
 
 .task_margin {
-  margin: 10px 0;
+  margin: 20px 10px;
 }
 
-#deskProgress_tasks {
+.nameValue {
+  width: 80%;
+  text-align: center;
+  color: rgb(68, 22, 82);
+}
+
+.nameValue_margin {
+  margin: 10px auto 0;
+}
+
+.descriptionValue {
+  width: 80%;
+  text-align: center;
+  color: rgba(68, 22, 82, 0.6);
+}
+
+.descriptionValue_margin {
+  margin: 0 auto;
+}
+
+#deskProgress__tasks {
   width: 90%;
 }
 
-#deskDone_tasks {
+#deskDone__tasks {
   width: 90%;
 }
 
-#deskDeleted_tasks {
+#deskDeleted__tasks {
   width: 90%;
 }
 
 .task_btns {
   align-self: center;
+}
+
+.task_btns_margin {
+  margin: 20px 0 10px;
 }
 
 /* modal */
@@ -95,11 +277,11 @@
   bottom: 0;
   left: 0;
 
-  background-color: rgba(212, 0, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   display: none;
 }
 
-#editModal_window {
+#editModal__window {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,17 +292,122 @@
   margin-right: -50%;
   padding: 1rem;
   transform: translate(-50%, -50%);
-  background-color: rgb(243, 205, 255);
-
-  border: 2px solid purple;
+  background-color: rgb(241, 194, 255);
 }
 
 #nameEdit {
-  border: 2px solid purple;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(68, 22, 82);
+  background-color: rgb(241, 194, 255);
   width: 70%;
 }
 
+#nameEdit::placeholder {
+  color: rgb(68, 22, 82, 0.5);
+}
+
 #descriptionEdit {
-  border: 2px solid purple;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(68, 22, 82);
+  background-color: rgb(241, 194, 255);
   width: 70%;
+}
+
+#descriptionEdit::placeholder {
+  color: rgb(68, 22, 82, 0.5);
+}
+
+#btnConfirm {
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: rgb(68, 22, 82);
+  color: rgb(241, 194, 255);
+}
+
+#btnClose {
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: rgb(68, 22, 82);
+  color: rgb(241, 194, 255);
+}
+
+#btnConfirm:hover {
+  background-color: rgba(68, 22, 82, 0.5);
+  transition: 0.2s;
+}
+
+#btnClose:hover {
+  background-color: rgba(68, 22, 82, 0.5);
+  transition: 0.2s;
+}
+
+.descriptionEdit_margin {
+  margin: 10px 0 20px;
+}
+
+#toDoForm {
+  grid-area: toDoForm;
+}
+#deskProgress {
+  grid-area: deskProgress;
+}
+#deskDone {
+  grid-area: deskDone;
+}
+#deskDeleted {
+  grid-area: deskDeleted;
+}
+
+@media (max-width: 1050px) {
+  #mainDesk {
+    display: grid;
+    grid-template-areas:
+      "toDoForm deskProgress"
+      "toDoForm deskDeleted"
+      "toDoForm deskDone";
+    grid-template-columns: 1fr 1fr;
+  }
+  #deskDeleted {
+    margin: 20px auto 0;
+    width: 80%;
+  }
+  #deskDone {
+    margin: 20px auto 0;
+    width: 80%;
+  }
+  #deskProgress {
+    margin: 0 auto;
+    width: 80%;
+  }
+  #toDoForm {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+@media (max-width: 630px) {
+  #mainDesk {
+    display: grid;
+    grid-template-areas:
+      "toDoForm"
+      "deskProgress"
+      "deskDeleted"
+      "deskDone";
+    grid-template-columns: 1fr;
+  }
+  #deskDeleted {
+    margin: 10px auto 0;
+  }
+  #deskDone {
+    margin: 10px auto 0;
+  }
+  #deskProgress {
+    margin: 10px auto 0;
+  }
 }

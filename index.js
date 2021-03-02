@@ -28,6 +28,8 @@ btnSubmit.addEventListener("click", (event) => {
   addTask(event, arrayProgress);
   event.preventDefault();
   drawTaskProgress();
+  form = event.target.closest("#toDoForm");
+  form.reset();
 });
 
 deskProgress.addEventListener("click", (event) => {
@@ -55,14 +57,14 @@ function addTask(event, array) {
 }
 
 function drawTaskProgress() {
-  const deskProgress_tasks = document.querySelector("#deskProgress_tasks");
-  deskProgress_tasks.innerHTML = "";
+  const deskProgress__tasks = document.querySelector("#deskProgress__tasks");
+  deskProgress__tasks.innerHTML = "";
   arrayProgress.forEach((item) => {
-    deskProgress_tasks.innerHTML += `
+    deskProgress__tasks.innerHTML += `
     <div class = "task task_margin">
-      <p>Name: <span class = "nameValue">${item.name}</span></p>
-      <p>Description: <span class = "descriptionValue">${item.description}</span></p>
-      <div class="task_btns">
+      <h3 class = "nameValue nameValue_margin">${item.name}</h3>
+      <small class = "descriptionValue descriptionValue_margin">${item.description}</small>
+      <div class="task_btns task_btns_margin">
         <button class="btnDelete"></button>
         <button class="btnEdit"></button>
         <button class="btnDone"></button>
@@ -72,31 +74,31 @@ function drawTaskProgress() {
 }
 
 function drawTaskDone() {
-  const deskDone_tasks = document.querySelector("#deskDone_tasks");
-  deskDone_tasks.innerHTML = "";
+  const deskDone__tasks = document.querySelector("#deskDone__tasks");
+  deskDone__tasks.innerHTML = "";
   arrayDone.forEach((item) => {
-    deskDone_tasks.innerHTML += `
+    deskDone__tasks.innerHTML += `
     <div class = "task task_margin">
-    <p>Name: <span class = "nameValue">${item.name}</span></p>
-    <p>Description: <span class = "descriptionValue">${item.description}</span></p>
-    <div class="task_btns">
-      <button class="btnDelete"></button>
-      <button class="btnEdit"></button>
-      <button class="btnDone"></button>
-    </div>
-  </div>`;
+      <h3 class = "nameValue nameValue_margin">${item.name}</h3>
+      <small class = "descriptionValue descriptionValue_margin">${item.description}</small>
+      <div class="task_btns task_btns_margin">
+        <button class="btnDelete"></button>
+        <button class="btnEdit"></button>
+        <button class="btnDone"></button>
+      </div>
+    </div>`;
   });
 }
 
 function drawTaskDeleted() {
-  const deskDeleted_tasks = document.querySelector("#deskDeleted_tasks");
-  deskDeleted_tasks.innerHTML = "";
+  const deskDeleted__tasks = document.querySelector("#deskDeleted__tasks");
+  deskDeleted__tasks.innerHTML = "";
   arrayDeleted.forEach((item) => {
-    deskDeleted_tasks.innerHTML += `
+    deskDeleted__tasks.innerHTML += `
     <div class = "task task_margin">
-      <p>Name: <span class = "nameValue">${item.name}</span></p>
-      <p>Description: <span class = "descriptionValue">${item.description}</span></p>
-      <div class="task_btns">
+      <h3 class = "nameValue nameValue_margin">${item.name}</h3>
+      <small class = "descriptionValue descriptionValue_margin">${item.description}</small>
+      <div class="task_btns task_btns_margin">
         <button class="btnDelete"></button>
         <button class="btnEdit"></button>
         <button class="btnDone"></button>
@@ -151,11 +153,11 @@ function findEventProgress(event) {
   const btnDone = task.querySelector(".btnDone");
   const btnEdit = task.querySelector(".btnEdit");
   if (event.target === btnDelete) {
-    arrayProgress = moveToDeleted(arrayProgress, task);
+    arrayProgress = moveToDeleted(event, arrayProgress, task);
     drawTaskProgress();
     drawTaskDeleted();
   } else if (event.target === btnDone) {
-    arrayProgress = moveToDone(arrayProgress, task);
+    arrayProgress = moveToDone(event, arrayProgress, task);
     drawTaskProgress();
     drawTaskDone();
   } else if (event.target === btnEdit) {
@@ -165,7 +167,7 @@ function findEventProgress(event) {
   }
 }
 
-function moveToDeleted(array, task) {
+function moveToDeleted(event, array, task) {
   const name = task.querySelector(".nameValue").textContent;
   const description = task.querySelector(".descriptionValue").textContent;
   arrayDeleted.push({
@@ -173,13 +175,13 @@ function moveToDeleted(array, task) {
     description: description,
   });
   const result = array.filter(function del(item) {
-    if (item.name != name || item.description != description) return item;
+    if (item.name != name && item.description != description) return item;
   });
   array = result;
   return array;
 }
 
-function moveToDone(array, task) {
+function moveToDone(event, array, task) {
   const name = task.querySelector(".nameValue").textContent;
   const description = task.querySelector(".descriptionValue").textContent;
   arrayDone.push({
@@ -187,7 +189,7 @@ function moveToDone(array, task) {
     description: description,
   });
   const result = array.filter(function del(item) {
-    if (item.name != name || item.description != description) return item;
+    if (item.name != name && item.description != description) return item;
   });
   array = result;
   return array;
@@ -225,7 +227,7 @@ function findEventDeleted(event) {
     arrayDeleted = deleteTask(task, arrayDeleted);
     drawTaskDeleted();
   } else if (event.target === btnDone) {
-    arrayDeleted = moveToDone(arrayDeleted, task);
+    arrayDeleted = moveToDone(event, arrayDeleted, task);
     drawTaskDeleted();
     drawTaskDone();
   } else if (event.target === btnEdit) {
@@ -239,7 +241,7 @@ function deleteTask(task, array) {
   const name = task.querySelector(".nameValue").textContent;
   const description = task.querySelector(".descriptionValue").textContent;
   const result = array.filter(function del(item) {
-    if (item.name != name || item.description != description) return item;
+    if (item.name != name && item.description != description) return item;
   });
   array = result;
   return array;
@@ -252,7 +254,7 @@ function findEventDone(event) {
   const btnEdit = task.querySelector(".btnEdit");
   const btnDelete = task.querySelector(".btnDelete");
   if (event.target === btnDelete) {
-    arrayDone = moveToDeleted(arrayDone, task);
+    arrayDone = moveToDeleted(event, arrayDone, task);
     drawTaskDone();
     drawTaskDeleted();
   } else if (event.target === btnEdit) {
